@@ -1,0 +1,86 @@
+.showcase-container {
+    background-image: url('/src/assets/backround.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin-top: 5%;
+  }
+  
+  .showcase-content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .showcases {
+    display: flex;
+    position: relative;
+  }
+  
+  .showcase {
+    width: 25%;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    margin-left: 5%;
+  }
+  
+  .showcase:hover {
+    transform: scale(1.1);
+  }
+  
+  .logo-text {
+    text-align: center;
+  }
+  
+  .logo-showcase {
+    width: 70%;
+    position: relative;
+    margin-top: 7%;
+  }
+  
+  .text {
+    font-size: 30px;
+    font-weight: lighter;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  
+  .button-showcase {
+    position: relative;
+    padding: 15px 15px;
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .button-showcase:hover {
+    background-color: #f0f0f0;
+  }
+  @media (max-width: 768px) {
+
+
+    .showcase-container {
+        padding: 25px;
+      }
+
+    .showcase-content {
+        flex-direction: column-reverse;
+    }
+
+    .button-showcase{
+        margin-bottom: 12%;
+    }
+
+    .logo-showcase {
+        width: 40%;
+        position: relative;
+        margin-top: 7%;
+      }
+  }

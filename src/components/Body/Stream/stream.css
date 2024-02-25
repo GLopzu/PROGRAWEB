@@ -1,0 +1,101 @@
+.stream-latest {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.stream-latest h1 {
+    font-weight: bold;
+    font-size: 27px;
+    color: #404040;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: flex;
+    margin-left: 13%;
+    margin-right: 10%;
+    overflow-x: hidden;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-right: 30px;
+}
+
+.card h3 {
+    margin-bottom: 0px;
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: #404040;
+}
+
+.card img {
+    width: 230px;
+    height: auto;
+    border-radius: 2px;
+}
+
+.card p {
+    margin-top: 1px;
+    color: rgb(78, 78, 78);
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #404040;
+}
+
+.move-buttons {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prev, .next {
+    background: none;
+    border: none;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+}
+
+.prev {
+    left: 5%;
+}
+
+.next {
+    right: 5%;
+}
+
+@media (max-width: 1000px) {
+    .move-buttons {
+      display: none;
+    }
+  }
+  

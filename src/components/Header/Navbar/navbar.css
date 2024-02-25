@@ -1,0 +1,130 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 15px;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+}
+
+
+.ham-menu-icon {
+  display: none;
+}
+
+.ham-menu-icon img {
+  display: none;
+}
+
+
+.navbar-logo {
+  margin-left: 80px;
+}
+
+.navbar-logo img {
+  width: 80px;
+  height: auto;
+}
+
+
+.btn-container {
+  margin-left: 60px;
+  align-items: center;
+}
+
+.navbar-btn {
+  background-color: transparent;
+  color: gray;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 10pt;
+}
+
+.navbar-btn:hover {
+  color: black;
+}
+
+.sign-btn-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+}
+
+.sign-in-btn {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 10pt;
+  font-weight: bold;
+  position: relative;
+}
+
+.sign-up-btn {
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: #2e2bd8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 13pt;
+  font-weight: bolder;
+  position: relative;
+  display: block;
+}
+
+.sign-up-btn:hover {
+  background-color: #22209d;
+  color: white;
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 100000;
+}
+
+@media screen and (max-width: 1200px) {
+  .ham-menu-icon {
+    margin-left: 5%;
+    margin-right: 2%;
+    display: block;
+  }
+
+  .ham-menu-icon img {
+    width: 30px;
+    height: auto;
+    display: block;
+  }
+
+  .navbar-logo {
+    margin-left: 0;
+  }
+
+  .navbar-logo img {
+    width: 80px;
+    height: auto;
+  }
+
+  .btn-container {
+    display: none;
+  }
+
+  .navbar-btn {
+    display: none;
+  }
+
+  .sign-btn-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sign-up-btn {
+    font-size: 11pt;
+  }
+}
+
