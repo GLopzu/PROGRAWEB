@@ -1,0 +1,20 @@
+.nombre-input {
+    margin-bottom: 20px;
+  }
+  
+  .nombre-input label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .nombre-input input {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .nombre-input p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  

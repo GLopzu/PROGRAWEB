@@ -1,0 +1,18 @@
+.minus-btn {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  background-color: black;
+  background-image: url('../../assets/human.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+  
+  .minus-btn:disabled {
+    cursor: not-allowed;
+    background-color: black;
+  }
+  
