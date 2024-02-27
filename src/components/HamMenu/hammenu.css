@@ -1,12 +1,15 @@
 .menu-items {
     display: block;
-    position: sticky;
-    top: 63px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: auto;
     background-color: #fff;
-    width: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 99999;
     padding: 15px;
+    overflow: hidden;
 }
 
 .menu-items button {
@@ -15,6 +18,58 @@
     padding: 10px;
     font-size: 16px;
     text-align: left;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    margin-left: auto;
+    color: black;
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    display: none;
+    text-align: center;
+}
+
+.close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    opacity: 0.5; /* Opacidad inicial */
+    transition: opacity 0.3s ease; /* Transición para la opacidad */
+}
+
+.close:hover {
+    opacity: 1; /* Opacidad al hacer hover */
+}
+
+.menu-items button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 10px;
     border: none;
     background: none;
     cursor: pointer;
@@ -32,3 +87,27 @@
         display: none;
     }
   }
+
+@media screen and (max-width: 600px ) {
+
+    .menu-items {
+        height: 100%;
+    }
+    
+    .close-btn {
+        display: block;
+        position: fixed;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: auto;
+    }
+    .close {
+        color: gray;
+        font-size: 20pt;
+    }
+
+    .menu-items {
+        height: calc(100% - 40px); /* Restar la altura del botón cerrar */
+    }
+}
