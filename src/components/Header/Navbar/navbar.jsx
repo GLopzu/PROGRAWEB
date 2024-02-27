@@ -32,7 +32,7 @@ const Navbar = () => {
           <button className="sign-up-btn">SIGN UP</button>
         </div>
       </div>
-      {menuOpen && <HamMenu />}
+      {menuOpen && <HamMenu  onClick={toggleMenu}/>}
     </div>
   );
 };
