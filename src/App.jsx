@@ -1,52 +1,47 @@
+// App.jsx
 import React, { useState, useEffect } from 'react';
-import CatImage from './components/CatImage';
-import CatData from './components/CatData';
-import Loader from './components/Loader';
-import { fetchRandomCatImage } from './services/catImageService';
-import { fetchRandomCatData } from './services/catDataService';
+import CatImage from './components/CatImage.jsx';
+import CatData from './components/CatData.jsx';
+import Loading from './components/Loading.jsx';
+import { fetchCatImageWithText } from './services/catImageService.jsx';
+import { fetchRandomCatData } from './services/catDataService.jsx';
+import './App.css';
 
 const App = () => {
   const [catImage, setCatImage] = useState(null);
   const [catData, setCatData] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    fetchRandomCatImage()
-      .then(image => setCatImage(image))
-      .catch(error => console.error('Error fetching cat image:', error))
-      .finally(() => setLoading(false));
+    fetchCatData();
   }, []);
 
-  useEffect(() => {
+  const fetchCatData = async () => {
     setLoading(true);
-    fetchRandomCatData()
-      .then(data => setCatData(data))
-      .catch(error => console.error('Error fetching cat data:', error))
-      .finally(() => setLoading(false));
-  }, []);
+    try {
+      const data = await fetchRandomCatData();
+      const firstFourWords = data.split(' ').slice(0, 4).join(' '); // Obtenemos las primeras cuatro palabras
+      const imageUrl = await fetchCatImageWithText(firstFourWords);
+      setCatImage(imageUrl);
+      setCatData(data);
+    } catch (error) {
+      console.error('Error fetching cat data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const reloadCatData = () => {
-    setLoading(true);
-    fetchRandomCatImage()
-      .then(image => setCatImage(image))
-      .catch(error => console.error('Error fetching cat image:', error))
-      .finally(() => setLoading(false));
-
-    setLoading(true);
-    fetchRandomCatData()
-      .then(data => setCatData(data))
-      .catch(error => console.error('Error fetching cat data:', error))
-      .finally(() => setLoading(false));
+    fetchCatData();
   };
 
   return (
-    <div>
+    <div className="App">
       {loading ? (
-        <Loader />
+        <Loading />
       ) : (
         <>
-          {catImage && <CatImage imageUrl={catImage} altText={catData && catData.substring(0, catData.indexOf(' ', 4))} />}
+          {catImage && <CatImage imageUrl={catImage} altText={catData} />}
           {catData && <CatData catData={catData} />}
           <button onClick={reloadCatData}>Reload</button>
         </>
