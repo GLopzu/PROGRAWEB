@@ -1,7 +1,8 @@
 
 const fetchCatImageWithText = async (text) => {
+
   try {
-    const response = await fetch(`https://cataas.com/cat/says/${encodeURIComponent(text)}`);
+    const response = await fetch(`https://cataas.com/cat/says/${encodeURIComponent(text)}?fontSize=50&fontColor=beige`);
     const imageUrl = response.url;
     return imageUrl;
   } catch (error) {

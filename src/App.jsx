@@ -6,6 +6,7 @@ import Loading from './components/Loading.jsx';
 import { fetchCatImageWithText } from './services/catImageService.jsx';
 import { fetchRandomCatData } from './services/catDataService.jsx';
 import './App.css';
+import './Loader.css'
 
 const App = () => {
   const [catImage, setCatImage] = useState(null);
@@ -22,6 +23,7 @@ const App = () => {
       const data = await fetchRandomCatData();
       const firstFourWords = data.split(' ').slice(0, 4).join(' '); // Obtenemos las primeras cuatro palabras
       const imageUrl = await fetchCatImageWithText(firstFourWords);
+      console.log(imageUrl) //
       setCatImage(imageUrl);
       setCatData(data);
     } catch (error) {
@@ -40,10 +42,13 @@ const App = () => {
       {loading ? (
         <Loading />
       ) : (
-        <>
+        <><div className="cats-info">
           {catImage && <CatImage imageUrl={catImage} altText={catData} />}
           {catData && <CatData catData={catData} />}
-          <button onClick={reloadCatData}>Reload</button>
+        </div>
+          <div className='next-btn'>
+            <button onClick={reloadCatData}>Next</button>
+          </div>
         </>
       )}
     </div>

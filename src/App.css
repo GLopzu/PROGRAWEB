@@ -1,9 +1,81 @@
+/* body {
+  background-image: url('./assets/background.png');
+} */
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+button {
+  /* width: 100px; */
+  border-radius: 25px;
+  border: 2px solid #DFC0A1;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: lato;
+  background-color: transparent;
+  cursor: pointer;
+  /* transition: border-color 0.25s; */
+  color: #DFC0A1;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: lato;
 }
+
+.cats-info {
+  display: flex;
+}
+
+.cat-data {
+  margin-left: 50px;
+  text-align: start;
+  align-content: center;
+  width: 600px;
+}
+
+
+.cat-data #mew-facts {
+  font-size: 48px;
+  color: #DFC0A1;
+  font-weight: bolder;
+  margin-bottom: 0px;
+}
+
+.cat-data #data {
+  font-size: 24px;
+  color: #403021;
+  margin-top: 30px;
+}
+
+.cat-image-container {
+  place-self: center;
+  width: 350px;
+  height: 350px;
+}
+
+.cat-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+.next-btn {
+  position: fixed;
+  left: 1000px;
+
+}
+
+
 
 .logo {
   height: 6em;
@@ -11,9 +83,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +96,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -33,10 +108,55 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
+@media (max-width: 768px) {
+  button {
+    padding: 0;
+    font-size: 25px;
+    width: 200px;
+    height: 50px;
 
-.read-the-docs {
-  color: #888;
+
+  }
+
+
+  .cats-info {
+    flex-direction: column;
+  }
+
+  .cat-image-container {
+    width: 300px;
+    height: 300px;
+    /* place-self: auto; */
+  }
+
+  .cat-data {
+    margin: 50px 0 90px 0;
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .cat-data #data {
+    margin-top: 0;
+    font-size: 18px;
+  }
+
+  .cat-data #mew-facts {
+    margin-bottom: 9px;
+
+    font-size: 40px;
+    /* text-align: center; */
+  }
+
+  .next-btn {
+    position: unset;
+  }
+
+  .card {
+    padding: 2em;
+  }
+
+  .read-the-docs {
+    color: #888;
+  }
 }
