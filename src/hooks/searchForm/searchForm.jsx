@@ -12,14 +12,14 @@ const SearchForm = ({ query, setQuery }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={query}
         onChange={handleInputChange}
         placeholder="Search GIFs..."
       />
-      <button type="submit">Search</button>
+      <button className="search-button" type="submit">Search</button>
     </form>
   );
 };

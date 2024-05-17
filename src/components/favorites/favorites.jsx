@@ -1,11 +1,10 @@
-
 import React from 'react';
 
 const Favorites = ({ favorites }) => {
   return (
     <div>
       <h2>Favorites</h2>
-      <div className="grid">
+      <div className="grid-container">
         {favorites.map((gif) => (
           <div key={gif.id} className="gif-card">
             <img src={gif.images.fixed_height.url} alt={gif.title} />

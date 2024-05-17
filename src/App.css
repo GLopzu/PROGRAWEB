@@ -15,6 +15,12 @@ body {
     text-align: center;
   }
   
+  h2{
+    margin-left: 15px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: #bb4558;
+  }
   p {
     text-align: center;
   }
@@ -25,70 +31,109 @@ body {
     margin-bottom: 20px;
   }
   
-  .search-form input[type="text"] {
+  .search-form input[type="submit"] {
     padding: 8px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 500px;
+    border: 1px solid #307186;
+    border-radius: 15px;
     margin-right: 10px;
   }
   
   .search-form button {
     padding: 8px 16px;
     background-color: #007bff;
-    color: #fff;
+    color: #90c1e9;
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
   
   
-  .gif-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 20px;
-  }
+
   
   .gif-card {
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
   }
-  
-  .gif-card img {
-    width: 100%;
-    height: auto;
-  }
-  
+
   .gif-card p {
     text-align: center;
     padding: 10px;
   }
-  
-  
-  .favorites {
-    margin-top: 20px;
-  }
-  
-  .favorites-grid {
+
+  .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
   }
   
-  .favorite-card {
-    border: 1px solid #ccc;
+  .gif-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+  
+  }
+  
+
+
+  .search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    background-color: #9cc2d1; 
+    border: none;
     border-radius: 5px;
-    overflow: hidden;
+    cursor: pointer;
+    font-size: 16px;
   }
   
-  .favorite-card img {
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px; 
+    margin-top: 30px;
+    margin-left: 15px;
+  }
+  
+  .gif-card {
+    position: relative;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5)); 
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden; 
+  }
+  
+  .gif-card img {
     width: 100%;
     height: auto;
+    display: block;
+    border-radius: 10px; 
   }
   
-  .favorite-card p {
-    text-align: center;
-    padding: 10px;
+  
+  .card-content p {
+    margin: 0;
   }
   
+  .card-content button {
+    background-color: transparent;
+    border: none;
+    color: rgb(157, 176, 230);
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  
+  
+  .fav{
+    border-radius: 30px;
+    height: 25px;
+    display: flex;
+    text-align: end;
+  position: absolute;
+  bottom: 10px; 
+
+  }
